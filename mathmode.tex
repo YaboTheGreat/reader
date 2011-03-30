@@ -7,7 +7,6 @@ with a good deal of functionality in this area and has become a fairly
 standard tool in the math community.  In addition, the math
 typesetting abilities of \LaTeX{} can be further expanded by the use
 of the \AmS{-}\LaTeX{} packages.
-
 Packages in general will be discussed later, but for now, it suffices
 to add
 \begin{verbatim}
@@ -23,20 +22,26 @@ make life far easier.
 The key tool for typesetting mathematical content is math mode.  Math
 mode is accessed through a variety of math environments.  In math
 mode, the basic behavior of \LaTeX{} is altered in a few important
-ways.  First of all, the letters on the keyboard become constants and
-variables.  For example, an \verb=a= in math mode will be displayed as
-$a$ while in normal text, it is an a.  This gives them an italicized
+ways.  First of all, the letters on the keyboard are treated as
+constants and variables.
+For example, an ``\verb=a='' in a math environment will be
+displayed as ``\(a\)'' while in normal text, it is an ``a''.
+This gives them an italicized
 appearance to make them typographically different from their textual
 counterparts.  Note that this is not the same as typesetting text in
 italics, and math mode should never be used to italicize text.
 
-While in math mode, the fast majority of characters on your keyboard
+While in math mode, the vast majority of characters on your keyboard
 will continue to function as normal.  In addition to the letters
 available on the keyboard, there are a wide variety of other
 characters and symbols available through various \LaTeX{} commands.
+For instance, all greek letters are available through \LaTeX{}
+commands \verb!\[lettername]!, so \verb!\beta! will typeset a
+\(\beta\).
 \LaTeX{} also offers an extensive array of hats, bars, and other
 useful accents.
 
+%add some examples here
 The math mode chapters do not have many examples.  However, there is a
 selection of examples following the chapters.
 
@@ -44,14 +49,20 @@ selection of examples following the chapters.
 \label{sec:math-environments}
 
 \LaTeX{} is extremely powerful, not least in its ability to typeset
-math.  There are three math environments: \texttt{math},
-\texttt{displaymath}, and \texttt{equation}.  The inline environment
+math.  There are three primary math environments: \texttt{math},
+\texttt{displaymath}, and \texttt{equation}.  The \textt{math} or
+inline math environment
 allows the inclusion of math in a normal line of text, while the
-displayed environment enables one to set off lines of math.  The
+displayed environment renders the math content centered, on a
+seperate line.  The
 equation environment is essentially the same as the displayed
-environment, but each instance is numbered sequentially.  $x+y=z$ is
+environment, but each instance is numbered sequentially.  \(x+y=z\) is
 an example of the inline environment, while \[x+y=z\] is the same
-thing in the displayed environment.
+thing in the displayed environment, and
+\begin{equation}
+x+y=z
+\end{equation}
+is in the \texttt{equation} environment.
 
 \subsection{Inline Math}
 \label{sec:inline-math}
@@ -66,6 +77,19 @@ would appear in one's source as
 \begin{verbatim}
 $x+y=z$ is an example of the inline environment.
 \end{verbatim}
+While this is perfectly acceptable, and very convinient, recently
+\verb=\(= and \verb=\)= have become preferable to indicate inline
+math. Functionality is currently the same as using dollar signs,
+but the two may diverge in the future, with \verb=\( \)= being
+the version most likely to recive updates. Furthermore, the use
+of parentheses aids in pairing the delimiters. Some editors will
+even help identify parenthesis pairs, while similar functionality
+for dollar signs is much harder to come by. This can help alleviate
+the problem of one hanging \$ as this will place everything that
+is intended to be in math mode out of math mode, and everything
+intended not to be in math mode in math mode. The hanging \$
+is a common error that will cause a great deal of compiler
+errors.
 
 \subsection{Displayed Math}
 \label{sec:displayed-math}
