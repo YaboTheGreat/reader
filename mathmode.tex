@@ -97,22 +97,43 @@ errors.
 The displayed math environment is formally delimited by
 \begin{verbatim}
 \begin{displaymath}
+some math content here
 \end{displaymath}
 \end{verbatim}
-However, one can also use $\backslash [$ at the beginning and
-$\backslash ]$ at the end of the statement.  Thus, using square
+However, due to the extensive use thie enviornment see, it is
+asvisable to use $\backslash [$ at the beginning and
+$\backslash ]$ at the end of the statement, rather than writing out the
+full $\backslash$begin $\backslash$end delimiters. Thus, using square
 brackets as the delimiters, \[x+y=z\] would appear in one's source as
 \begin{verbatim}
 \[x+y=z\]
 \end{verbatim}
 
+It is important to note that there is one more method by which the
+displayed math environment is commonly accessed. This is through
+the use of double dollar signs \verb!$$ x + y = z $$!. This practice
+is not recommended and hopefully on its way out. While using double
+dollar signs seems convinient, it is actually not part of \LaTeX,
+but rather a \TeX{} primative, and not specifically defined in \LaTeX.
+Since \LaTeX{} is a \TeX{} macro package, you can get away with using
+\TeX{} commands, but when \LaTeX{} definitions of displayed math
+diverge from those of \TeX{}, it is the \verb=\[ \]= and
+$\backslash$begin $\backslash$end version that will use the \LaTeX{}
+definition, while \verb=$$ $$= will use the plain \TeX{} definition.
+It is not readily visible, but when using the \AmS{} packages, the
+formatting of math typeset with \verb=$$ $$= and \verb=\[ \]= is
+already slightly different. If the \LaTeX{} defintion of displayed
+math diverges further from that in \TeX{} the difference will
+bcome more pronounced.
+
 \subsection{Equations}
 \label{sec:equations}
 
-The equation environment returns to the conventional delimiters for
-environments.  It is accessed by \verb=\begin{equation}= and
+The equation environment lacks any special shortcut delimiters.
+Therefore, the equation environment
+is accessed by \verb=\begin{equation}= and
 \verb=\end{equation}=.  Our example equation in the equation
-environment would appear as
+environment appears as
 \begin{equation}
   \label{eq:1}
   x+y=z
@@ -122,11 +143,13 @@ environment would appear as
 \label{sec:stars-well-asterisks}
 
 Various environments and structures in \LaTeX{} will automatically
-number themselves, like the \texttt{equation} environment above.
+number themselves. The \texttt{equation} environment above, is
+a good example of such an environment.
 However, unlike \texttt{equation}, not everything has a separate
 unnumbered counterpart.  To avoid the numbering, an asterisk (*) is
-used to disable numbering.  This fact is of little concern now, but it
-is a fact to file away, as it will come up again later.
+used to suppress numbering.  This fact is of little concern now, but it
+is a fact to file away, as it will come up when using thing like
+the \texttt{align} environment that will be discussed later.
 
 \section{Commands}
 \label{sec:commands}
